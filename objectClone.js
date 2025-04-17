@@ -5,7 +5,12 @@ const myObj = {
     education: {
       matric: "XYZ",
       fsc: "XYZ",
-      bs: "XYZ"
+      bs: "XYZ",
+      marks: {
+        marksmark: 1111,
+        fscmarks: 1111,
+        bsmarks: 1111
+      }
     }
   }
   
@@ -14,6 +19,7 @@ const myObj = {
   console.log(myObj)
   myObj1.name = "Ali";
   myObj1.education.fsc = "HI"
+  myObj1.education.marks.bsmarks = 2300;
   console.log(myObj1)
   console.log(myObj)
   
