@@ -46,3 +46,39 @@ function edgeOftriangle(side1, side2){
     return (side1 + side2) -1;
   }
 console.log(edgeOftriangle(20,20))  
+
+
+
+
+
+// Leet code problem
+
+
+
+let createCounter = function(n) {
+    
+  return function() {
+    console.log(n++)
+  };
+};
+
+let callFun = createCounter(10)
+
+callFun()
+
+
+let compose = function(functions) {
+  
+  return function(x) {
+    let result = x
+      for(let i=functions.length; i>0; i--){
+        result = functions[i-1](result)
+      }
+        console.log(result)
+  }
+};
+
+const fn = compose([x => 10 * x, x => 10 * x, x => 10 * x])
+
+fn(1)
+
