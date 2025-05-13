@@ -83,3 +83,78 @@ function getEvenNumber(arr){
 }
 getEvenNumber(data);
 console.log(evenNumber)
+
+
+const emp = [
+  {
+    name: "Ali",
+    department: "HR",
+    tasks: [
+      { title: "File reports", status: "done" },
+      { title: "Recruit staff", status: "pending" },
+      { title: "Organize event", status: "done" }
+    ]
+  },
+  {
+    name: "Sara",
+    department: "IT",
+    tasks: [
+      { title: "Fix bugs", status: "done" },
+      { title: "Deploy app", status: "done" },
+      { title: "Write tests", status: "done" },
+      { title: "Code review", status: "pending" }
+    ]
+  },
+  {
+    name: "John",
+    department: "Marketing",
+    tasks: [
+      { title: "Social media post", status: "pending" },
+      { title: "Client email", status: "pending" }
+    ]
+  }
+];
+
+let count = []
+emp.map((task)=>task.tasks).map((el)=>{
+  let val = 0
+  el.map(data=>{
+    for(let key in data){
+      if(data[key]==="done"){
+        val++
+        
+      }
+    }
+  })
+    count.push(val)
+})
+
+console.log(count)
+for(let i =0; i<count.length; i++){
+  if(count[i]>count[i+1]){
+    let index = count.indexOf(count[i])
+    let name = emp[index].name
+    let deprt = emp[index].department
+    console.log(name, deprt)
+
+  }
+}
+
+
+
+// Get object length
+
+Object.defineProperty(Object.prototype, 'keyCount', {
+  get() {
+    return Object.keys(this).length;
+  },
+});
+
+const myObj = {
+  name: "Arman",
+  age : 20,
+  city: "Lahore"
+};
+
+console.log(myObj.keyCount);
+
